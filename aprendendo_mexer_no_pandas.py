@@ -1,6 +1,7 @@
 import pandas as pd
 
 data = pd.read_csv("data.csv")
-data = pd.DataFrame(data)
+datas = pd.DataFrame(data)
 
-print(data["traduction"])
+print(datas["word"][1])
+print(datas["traduction"][1])
