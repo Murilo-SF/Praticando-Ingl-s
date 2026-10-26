@@ -28,14 +28,22 @@ def practicing():
         random_number = randint(0, (len(data)-1))
         
         print("-> Give the traduction of the word:")
-        answer = input(str(f"           {data["word"][random_number]} -> "))
-        
-        if answer == str(data["traduction"][random_number]):
-            print("\033[32m-\033[0m" * 20 + "\033[32mCORRECT!\033[0m" + "\033[32m-\033[0m" * 20 + "\n")    
+
+        user_answer = (input(f"           {data["word"][42]} -> "))
+
+        correct_answer = str(data["traduction"][42])
+        correct_answer = list(correct_answer.split(";"))
+
+        if user_answer in correct_answer:
+                if len(correct_answer) > 1:
+                    print("\033[32m-\033[1m" * 20 + "\033[32mCORRECT!\033[0m" + "\033[32m-\033[0m" * 20 + "\n")    
+                    print(f"\033[32m            {correct_answer}\033[0m"+ "\n")    
+                else: 
+                    print("\033[32m-\033[1m" * 20 + "\033[32mCORRECT!\033[0m" + "\033[32m-\033[0m" * 20 + "\n")    
         
         else:
-            print("\033[31m-\033[0m" * 20 + "\033[1;31mINCORRECT!\033[1;41" + "\033[31m-\033[0m" * 20)
-            print(f"\033[1;33m         Correct Answer -> {data['traduction'][random_number]}\n\033[0m")
+            print("\033[31m-\033[1m" * 20 + "\033[1;31mINCORRECT!\033[1;41" + "\033[31m-\033[0m" * 20)
+            print(f"\033[1;33m         Correct Answer -> {correct_answer}\n\033[0m")
 
 def app():
     response = starting_app()
