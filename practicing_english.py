@@ -29,9 +29,9 @@ def practicing():
         
         print("-> Give the traduction of the word:")
 
-        user_answer = (input(f"           {data["word"][42]} -> "))
+        user_answer = (input(f"           {data["word"][random_number]} -> "))
 
-        correct_answer = str(data["traduction"][42])
+        correct_answer = str(data["traduction"][random_number])
         correct_answer = list(correct_answer.split(";"))
 
         if user_answer in correct_answer:
