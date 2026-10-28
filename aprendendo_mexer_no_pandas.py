@@ -1,11 +1,8 @@
 import pandas as pd
-
+from random import randint
 data = pd.read_csv("data.csv")
-datas = pd.DataFrame(data)
-inf = str(datas["traduction"][41])
-inf = list(inf.split(";"))
-resposta = input("Principalmente")
-print(len(inf))
+inf = str(data["traduction"][32])
+# print(len(data))
 print(inf)
-if resposta in inf:
-    print("AHAM")
+# if len(data) == 0:
+    # print("AHAAM")
